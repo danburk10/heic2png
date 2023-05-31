@@ -1,7 +1,7 @@
-' batch convert HEIC to png
-' from cli: ls -name *.HEIC | python .\io.py
+# batch convert HEIC to png
+# from cli: ls -name *.HEIC | python .\io.py
 
-' requires pillow, pillow_heif
+# requires pillow, pillow_heif
 
 import sys
 from PIL import Image
@@ -13,3 +13,5 @@ for line in sys.stdin:
     filename = line.strip()
     img = Image.open(filename)
     img.save(filename+'.png', format('png'))
+    img.close()
+    
